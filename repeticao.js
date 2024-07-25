@@ -14,13 +14,9 @@ cliente.enderecos = [
 },
 ];
 
-cliente.enderecos.push({
-    rua:"R. joseph ladder",
-    numero: 404,
-    apartamento:false,
-});
-
-const litaApenasApartamentos = cliente.enderecos.filter(
-    (endereco) => endereco.apartamento === true
-);
-console.log(litaApenasApartamentos);
+for (let chave in cliente){
+    let tipo = typeof cliente[chave];
+    if (tipo !== "object" && tipo !== "function"){
+        console.log(`A chave ${chave} tem o valor ${cliente[chave]}`);
+    }
+};
